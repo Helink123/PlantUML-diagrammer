@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Borger as Borger
+rectangle "CoronaNet" {
+   rectangle "3. Use case with citizen" {
+       rectangle "Smittestop" {
+          ("Logger ind på systemet") as (pInfo)
+          (trykker på "Se coronatal") as (history)
+          Borger --> (pInfo)
+
+    
+          (pInfo) --|> (history)
+          (history) --|> (Se for valgte kommune)
+          (history) -- (Se for valgte region)
+          (history) -- (Se for valge by)
+          (history) -- (Se for hele landet)
+          (Se for valgte kommune)--|> (Borger forlader appen efter brug)
+       }
+   }
+}
+@enduml
